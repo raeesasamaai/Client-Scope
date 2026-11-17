@@ -1,0 +1,40 @@
+{
+  "name": "clientscope",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build && node scripts/build-server.mjs",
+    "test": "vitest run",
+    "check": "npm test && npm run build && node scripts/smoke-test.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "format": "prettier --write src server scripts docs *.json *.ts *.md",
+    "deploy:cloudflare": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.2.8",
+    "@fontsource-variable/outfit": "^5.2.8",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.12",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "esbuild": "^0.25.0",
+    "jsdom": "^31.0.1",
+    "prettier": "^3.6.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "~5.9.3",
+    "vite": "^6.4.1",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.45.0"
+  }
+}
